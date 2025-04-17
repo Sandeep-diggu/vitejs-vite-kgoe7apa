@@ -34,7 +34,19 @@ function App() {
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
+  return (
+    <div 
+    style={{width:"max-content", margin:"auto"}}>
+      {books.map((book) => (
+        <div key={book.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
+          <img src={book.image} alt={book.name} style={{ width: '100px', height: '100px' }} />
+          <h3>{book.name}</h3>
+          <p>Genre: {book.genre}</p>
+          <p>Author: {book.author}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
